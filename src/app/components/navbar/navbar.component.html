@@ -1,4 +1,6 @@
-<nav class="h-[86px] border flex items-center justify-center">
+<nav [ngClass]="{ 
+    'shadow-sm transition-all' : isScrolling
+}" class="bg-[#FFFFFFE8] sticky top-0 h-[60px] md:h-[86px] flex items-center justify-center">
     <div class="flex max-w-[1140px] flex-1 items-center">
         <div>
             <h1 class="pl-[12px] text-[21px] leading-[30px] hover:text-[#fcbf00] cursor-pointer font-bold">
@@ -6,8 +8,11 @@
             </h1>
         </div>
         <div class="flex justify-end md:justify-between  flex-end pr-[15px] flex-1 md:bg-none md:pl-[145px]">
-            <ul
-                class="p-[25px] min-w-[240px] left-0 top-0 bottom-0 fixed md:relative md:flex bg-white  h-auto flex flex-col md:flex-row gap-[40px] text-[16px] leading-[24px] font-bold">
+            <ul [ngClass]="{
+                'ml-[0px] transition-all ease-in delay-100': expandNavbar,
+                'p-[0px] transition-all -ml-[280px] md:ml-0 ease-out delay-100': !expandNavbar
+            }"
+                class="p-[25px] w-[240px] left-0 top-0 bottom-0 fixed md:relative md:flex shadow-md md:shadow-none bg-white md:bg-transparent h-auto flex flex-col md:flex-row gap-[40px] text-[14px] md:text-[16px] leading-[24px] font-bold">
                 <li class="hover:text-[#fcbf00] cursor-pointer">About</li>
                 <li class="hover:text-[#fcbf00] cursor-pointer">Projects</li>
                 <li class="hover:text-[#fcbf00] cursor-pointer">Resume</li>
@@ -31,21 +36,16 @@
                                 </path>
                             </g>
                         </svg>
-                        <!-- <svg width="26px" height="26px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.50009 12.0008C7.49604 10.6271 7.87712 9.2798 8.60009 8.11177C9.30106 6.97733 10.3262 6.07929 11.5431 5.53377C12.7306 5.00425 14.0552 4.86422 15.3271 5.13377L15.5091 5.17577C14.7053 5.71232 14.0258 6.41473 13.5161 7.23577C12.7931 8.4038 12.412 9.7511 12.4161 11.1248C12.4068 12.9579 13.0921 14.7265 14.3341 16.0748C15.1848 16.9942 16.285 17.6458 17.5001 17.9498C16.4784 18.6323 15.2778 18.9979 14.0491 19.0008C12.2877 18.9902 10.6101 18.2475 9.41809 16.9508C8.17612 15.6025 7.49083 13.8339 7.50009 12.0008Z"
-                                    stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </g>
-                        </svg> -->
                         Color mode
                     </button>
                 </li>
             </ul>
-            <button class="rounded-md border flex md:hidden">
-                <svg width="45px" height="45px" viewBox="-7.2 -7.2 34.40 34.40" xmlns="http://www.w3.org/2000/svg"
+            <button class="rounded-md border flex md:hidden" (click)="toggleNavbar()">
+
+                <svg [ngClass]="{ 
+                    'hidden transition-all': expandNavbar,
+                    'block transition-all': !expandNavbar
+                }" width="45px" height="45px" viewBox="-7.2 -7.2 34.40 34.40" xmlns="http://www.w3.org/2000/svg"
                     fill="none">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -53,6 +53,30 @@
                         <path fill="#000000" fill-rule="evenodd"
                             d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
                         </path>
+                    </g>
+                </svg>
+
+                <svg [ngClass]="{ 
+                    'hidden transition-all': !expandNavbar,
+                    'block transition-all': expandNavbar
+                }" width="40px" height="40px" viewBox="-7.56 -7.56 36.12 36.12" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <title>close [#1511]</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs> </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-419.000000, -240.000000)"
+                                fill="#000000">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <polygon id="close-[#1511]"
+                                        points="375.0183 90 384 98.554 382.48065 100 373.5 91.446 364.5183 100 363 98.554 371.98065 90 363 81.446 364.5183 80 373.5 88.554 382.48065 80 384 81.446">
+                                    </polygon>
+                                </g>
+                            </g>
+                        </g>
                     </g>
                 </svg>
             </button>
