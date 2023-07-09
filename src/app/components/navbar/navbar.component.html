@@ -14,19 +14,31 @@
                 'p-[0px] transition-all -ml-[280px] md:ml-0 ease-out delay-100': !expandNavbar
             }"
                 class="p-[25px] w-[240px] left-0 top-0 bottom-0 fixed md:relative md:flex shadow-md md:shadow-none bg-white md:bg-transparent h-auto flex flex-col md:flex-row gap-[40px] text-[14px] md:text-[16px] leading-[24px] font-bold">
-                <li
-                    class="opacity-50 hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer">
+                <li [routerLink]="['']" [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/',
+                        'opacity-50' : currentRoute !== '/'
+                    }">
                     About</li>
-                <li
-                    class="opacity-50 hover:opacity-100 transition-all  hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer">
+                <li [routerLink]="['projects']" [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/projects',
+                        'opacity-50' : currentRoute !== '/projects'
+                    }">
                     Projects</li>
-                <li
-                    class="opacity-50 hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer">
+                <li [routerLink]="['resume']" [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/resume',
+                        'opacity-50' : currentRoute !== '/resume'
+                    }">
                     Resume</li>
-                <li
-                    class="opacity-50 hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer">
+                <li [routerLink]="['contacts']" [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/contacts',
+                        'opacity-50' : currentRoute !== '/contacts'
+                    }">
                     Contact</li>
-                <li
+                <li [routerLink]="['projects']"
                     class="hover:scale-95 transition-colors delay-75 ease-linear hover:text-[#ffc200] cursor-pointer block md:hidden">
                     <button class="hover:scale-95 text-[16px] leading-[24px] font-bold flex gap-2">
                         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"

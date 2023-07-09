@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Event, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -23,5 +24,20 @@ export class NavbarComponent {
     this.scrollTimeout = setTimeout(() => {
       this.isScrolling = false;
     }, 200);
+  }
+
+  currentRoute: string;
+
+  constructor(private router: Router) {
+    this.currentRoute = "Demo";
+    this.router.events.subscribe((event: Event) => {
+
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url;
+        console.log(event);
+      }
+
+    });
+
   }
 }
