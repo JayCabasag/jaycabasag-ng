@@ -1,27 +1,80 @@
-# Jaycabasag
+Sure! Here's an example of a GitHub README file for your portfolio site developed using Angular:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+```
+# Jay Cabasag - Portfolio Site
 
-## Development server
+![Website Preview](https://example.com/preview.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This repository contains the source code for Jay Cabasag's portfolio site, developed using Angular.
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Build
+## Demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can visit the live website at [https://www.jaycabasag.com](https://www.jaycabasag.com).
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Display projects and their details
+- Responsive layout for different devices
+- Contact form for getting in touch
+- Blog section for sharing articles
+- Integration with social media profiles
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To run the project locally, follow these steps:
 
-## Further help
+1. Clone the repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/JayCabasag/jaycabasag-ng.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd jaycabasag-ng
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+1. Start the development server:
+
+```bash
+ng serve
+```
+
+2. Open your browser and visit `http://localhost:4200` to see the site.
+
+## Technologies
+
+- Angular: A popular JavaScript framework for building single-page applications.
+- HTML5: The latest version of the Hypertext Markup Language.
+- CSS3: The latest version of Cascading Style Sheets.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or find any issues, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+```
+
+Feel free to customize this README file according to your specific project and its features.
