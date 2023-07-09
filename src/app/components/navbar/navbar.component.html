@@ -1,134 +1,85 @@
-<nav [ngClass]="{ 
+<nav [ngClass]="{
     'shadow-sm transition-all' : isScrolling
-}" class="bg-[#FFFFFFE8] sticky top-0 h-[60px] md:h-[86px] flex items-center justify-center">
-    <div class="flex max-w-[1140px] flex-1 items-center">
-        <div>
-            <h1
-                class="hover:scale-95 transition-colors delay-75 ease-linear hover:text-[#ffc200] pl-[12px] text-[21px] leading-[30px] cursor-pointer font-bold">
+}" class="relative bg-[#FFFFFFE8] md:sticky top-0 flex flex-wrap items-center justify-between px-2 py-3 mb-3">
+    <div class="container max-w-6xl md:px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+            <a
+                class="hover:scale-95 transition-colors delay-75 ease-linear hover:text-[#ffc200] inline-block mr-4 py-2 whitespace-nowrap text-[21px] leading-[30px] cursor-pointer font-bold">
                 @jaycabasag
-            </h1>
-        </div>
-        <div class="flex justify-end md:justify-between  flex-end pr-[15px] flex-1 md:bg-none md:pl-[145px]">
-            <ul [ngClass]="{
-                'ml-[0px] transition-all ease-in delay-100': expandNavbar,
-                'p-[0px] transition-all -ml-[280px] md:ml-0 ease-out delay-100': !expandNavbar
-            }"
-                class="p-[25px] w-[240px] left-0 top-0 bottom-0 fixed md:relative md:flex shadow-md md:shadow-none bg-white md:bg-transparent h-auto flex flex-col md:flex-row gap-[40px] text-[14px] md:text-[16px] leading-[24px] font-bold">
-                <li [routerLink]="['']" [ngClass]="{
-                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
-                        'opacity-100 text-[#ffc200]' : currentRoute === '/',
-                        'opacity-50' : currentRoute !== '/'
-                    }">
-                    About</li>
-                <li [routerLink]="['projects']" [ngClass]="{
-                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
-                        'opacity-100 text-[#ffc200]' : currentRoute === '/projects',
-                        'opacity-50' : currentRoute !== '/projects'
-                    }">
-                    Projects</li>
-                <li [routerLink]="['resume']" [ngClass]="{
-                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
-                        'opacity-100 text-[#ffc200]' : currentRoute === '/resume',
-                        'opacity-50' : currentRoute !== '/resume'
-                    }">
-                    Resume</li>
-                <li [routerLink]="['contacts']" [ngClass]="{
-                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
-                        'opacity-100 text-[#ffc200]' : currentRoute === '/contacts',
-                        'opacity-50' : currentRoute !== '/contacts'
-                    }">
-                    Contact</li>
-                <li [routerLink]="['projects']"
-                    class="hover:scale-95 transition-colors delay-75 ease-linear hover:text-[#ffc200] cursor-pointer block md:hidden">
-                    <button class="hover:scale-95 text-[16px] leading-[24px] font-bold flex gap-2">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M12 18.5C15.5899 18.5 18.5 15.5899 18.5 12C18.5 8.41015 15.5899 5.5 12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5Z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                </path>
-                                <path
-                                    d="M19.14 19.14L19.01 19.01M19.01 4.99L19.14 4.86L19.01 4.99ZM4.86 19.14L4.99 19.01L4.86 19.14ZM12 2.08V2V2.08ZM12 22V21.92V22ZM2.08 12H2H2.08ZM22 12H21.92H22ZM4.99 4.99L4.86 4.86L4.99 4.99Z"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                </path>
-                            </g>
-                        </svg>
-                        Color mode
-                    </button>
-                </li>
-            </ul>
-            <button class="rounded-md border flex md:hidden" (click)="toggleNavbar()">
+            </a>
+            <button (click)="toggleNavbar()"
+                class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none">
+                <!-- <span class="block relative w-6 h-px rounded-sm bg-gray-500"></span>
+                <span class="block relative w-6 h-px rounded-sm  bg-gray-500 mt-2"></span>
+                <span class="block relative w-6 h-px rounded-sm  bg-gray-500 mt-2"></span> -->
 
-                <svg [ngClass]="{ 
-                    'hidden transition-all': expandNavbar,
-                    'block transition-all': !expandNavbar
-                }" width="45px" height="45px" viewBox="-7.2 -7.2 34.40 34.40" xmlns="http://www.w3.org/2000/svg"
-                    fill="none">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill="#000000" fill-rule="evenodd"
-                            d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z">
-                        </path>
-                    </g>
-                </svg>
+                <span [ngClass]="{
+                    ' rotate-45 ' : expandNavbar,
+                    ' rotate-0 ' : !expandNavbar
+                  }" class="transition-all delay-75 ease-in block relative w-6 h-px rounded-sm bg-gray-500"></span>
+                <span [ngClass]="{
+                    ' hidden ' : expandNavbar,
+                    ' block ' : !expandNavbar
+                  }" class="transition-all ease-in relative w-6 h-px rounded-sm  bg-gray-500 mt-2"></span>
+                <span [ngClass]="{
+                    ' -rotate-45 ' : expandNavbar,
+                    ' rotate-0 mt-2' : !expandNavbar
+                  }" class="transition-all delay-75 ease-in block relative w-6 h-px rounded-sm  bg-gray-500"></span>
 
-                <svg [ngClass]="{ 
-                    'hidden transition-all': !expandNavbar,
-                    'block transition-all': expandNavbar
-                }" width="40px" height="40px" viewBox="-7.56 -7.56 36.12 36.12" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <title>close [#1511]</title>
-                        <desc>Created with Sketch.</desc>
-                        <defs> </defs>
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Dribbble-Light-Preview" transform="translate(-419.000000, -240.000000)"
-                                fill="#000000">
-                                <g id="icons" transform="translate(56.000000, 160.000000)">
-                                    <polygon id="close-[#1511]"
-                                        points="375.0183 90 384 98.554 382.48065 100 373.5 91.446 364.5183 100 363 98.554 371.98065 90 363 81.446 364.5183 80 373.5 88.554 382.48065 80 384 81.446">
-                                    </polygon>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </svg>
             </button>
         </div>
-        <div class="hidden md:block">
-            <button
-                class="hover:scale-95 hover:text-[#fcbf00] cursor-pointer  text-[16px] leading-[24px] font-bold flex gap-2">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M12 18.5C15.5899 18.5 18.5 15.5899 18.5 12C18.5 8.41015 15.5899 5.5 12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                        <path
-                            d="M19.14 19.14L19.01 19.01M19.01 4.99L19.14 4.86L19.01 4.99ZM4.86 19.14L4.99 19.01L4.86 19.14ZM12 2.08V2V2.08ZM12 22V21.92V22ZM2.08 12H2H2.08ZM22 12H21.92H22ZM4.99 4.99L4.86 4.86L4.99 4.99Z"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                    </g>
-                </svg>
-                <!-- <svg width="26px" height="26px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M7.50009 12.0008C7.49604 10.6271 7.87712 9.2798 8.60009 8.11177C9.30106 6.97733 10.3262 6.07929 11.5431 5.53377C12.7306 5.00425 14.0552 4.86422 15.3271 5.13377L15.5091 5.17577C14.7053 5.71232 14.0258 6.41473 13.5161 7.23577C12.7931 8.4038 12.412 9.7511 12.4161 11.1248C12.4068 12.9579 13.0921 14.7265 14.3341 16.0748C15.1848 16.9942 16.285 17.6458 17.5001 17.9498C16.4784 18.6323 15.2778 18.9979 14.0491 19.0008C12.2877 18.9902 10.6101 18.2475 9.41809 16.9508C8.17612 15.6025 7.49083 13.8339 7.50009 12.0008Z"
-                            stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg> -->
+        <div class="lg:flex flex-grow items-center text-gray-500" id="example-navbar-warning">
+            <ul [ngClass]="{
+                ' flex ': expandNavbar,
+                ' hidden md:flex ': !expandNavbar
+            }" class="flex-col lg:flex-row list-none mr-auto ml-auto">
+                <li [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/',
+                        'opacity-85' : currentRoute !== '/'
+                    }">
+                    <a [routerLink]="['']"
+                        class="px-6 py-2 flex items-center hover:opacity-75 text-[16px] leading-[24px] font-bold">
+                        Home
+                    </a>
+                </li>
+                <li [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/projects',
+                        'opacity-85' : currentRoute !== '/projects'
+                    }">
+                    <a [routerLink]="['projects']"
+                        class="px-6 py-2 flex items-center hover:opacity-75 text-[16px] leading-[24px] font-bold">
+                        Projects
+                    </a>
+                </li>
+                <li [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/resume',
+                        'opacity-85' : currentRoute !== '/resume'
+                    }">
+                    <a [routerLink]="['resume']"
+                        class="px-6 py-2 flex items-center hover:opacity-75 text-[16px] leading-[24px] font-bold">
+                        Resume
+                    </a>
+                </li>
+                <li [ngClass]="{
+                    'hover:opacity-100 transition-all hover:scale-95 delay-75 ease-linear hover:text-[#ffc200] cursor-pointer': true,
+                        'opacity-100 text-[#ffc200]' : currentRoute === '/contacts',
+                        'opacity-85' : currentRoute !== '/contacts'
+                    }">
+                    <a [routerLink]="['resume']"
+                        class="px-6 py-2 flex items-center hover:opacity-75 text-[16px] leading-[24px] font-bold">
+                        Contacts
+                    </a>
+                </li>
+            </ul>
+            <button [ngClass]="{
+                ' flex ': expandNavbar,
+                ' hidden md:flex ': !expandNavbar
+            }"
+                class="px-3 py-2 hover:scale-95 hover:text-[#fcbf00] cursor-pointer  text-[16px] leading-[24px] font-bold flex gap-2">
+                <img src="assets/light-mode-icon.svg" />
                 Color mode
             </button>
         </div>

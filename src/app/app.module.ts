@@ -12,6 +12,8 @@ import { ProjectsComponent } from './core/pages/projects/projects.component';
 import { UserComponent } from './core/services/user/user.component';
 import { ProjectComponent } from './core/services/project/project.component';
 import { HomeComponent } from './core/pages/home/home.component';
+import { ExperienceCardComponent } from './components/shared/experience-card/experience-card.component';
+import { EducationCardComponent } from './components/shared/education-card/education-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HomeComponent } from './core/pages/home/home.component';
     ProjectsComponent,
     UserComponent,
     ProjectComponent,
-    HomeComponent
+    HomeComponent,
+    ExperienceCardComponent,
+    EducationCardComponent
   ],
   imports: [
     BrowserModule,
