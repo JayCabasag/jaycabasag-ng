@@ -1,6 +1,3 @@
-Sure! Here's an example of a GitHub README file for your portfolio site developed using Angular:
-
-```
 # Jay Cabasag - Portfolio Site
 
 ![Website Preview](https://example.com/preview.png)
